@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
 
-const taskSchema = new mongoose.Schema({
+const musicSchema = new mongoose.Schema({
   artistName: {
     type: String,
-    default: "Unnown artist",
+    default: "Unknown Artist"
   },
   coverImg: {
     type: String,
     default: './images/cover.jpg',
   },
-  song: {
+  music: {
     type: String,
     required: [true, "Music is required!"],
   },
 });
 
-module.exports = mongoose.model("Task", taskSchema);
+module.exports = mongoose.model("Music", musicSchema);

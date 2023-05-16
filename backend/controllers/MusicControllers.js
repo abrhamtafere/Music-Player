@@ -5,10 +5,11 @@ module.exports.getMusics = async (req, res) => {
   res.send(musics);
 };
 
-module.exports.saveMusic = (req, res) => {
-  const { music } = req.body;
+module.exports.saveMusic = async (req, res) => {
+  // const music = req.body;
+  
 
-  MusicModel.create({ music })
+  MusicModel.create(req.body)
     .then((data) => {
       console.log("Saved Successfully...");
       res.status(201).send(data);
@@ -20,11 +21,16 @@ module.exports.saveMusic = (req, res) => {
 };
 
 module.exports.updateMusic = (req, res) => {
-  const { id } = req.params;
-  const { music } = req.body;
+  // const { id } = req.params;
+  // const music = req.body;
 
-  MusicModel.findByIdAndUpdate(id, { music })
-    .then(() => res.send("Updated successfully"))
+  MusicModel.findByIdAndUpdate(req.params.id, req.body, {
+    new: true
+  })
+    .then((data) => {
+      console.log("Updated successfully");
+      res.send(data);
+    })
     .catch((err) => {
       console.log(err);
       res.send({ error: err, msg: "Something went wrong!" });

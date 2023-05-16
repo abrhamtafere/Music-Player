@@ -1,5 +1,5 @@
 const express = require("express");
-
+var bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 require("dotenv").config({ path: './config.env' });
 
@@ -12,6 +12,7 @@ const app = express();
 const PORT = process.env.PORT | 5000;
 
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(cors());
 
 mongoose.connect(process.env.DATABASE_LOCAL, { useNewUrlParser: true,  useUnifiedTopology: true })
