@@ -59,7 +59,9 @@ export const MusicCardWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 6rem;
-  flex-direction: column;
+  flex-direction: row;
+  max-width: 100vw;
+  overflow: scroll;
   @media only screen and (min-width: 1800px) {
     flex-direction: row;
   }
@@ -221,19 +223,23 @@ export const MusicCardSection = styled.div`
 
 export const MusicSmallCards = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  overflow: scroll;
+  padding: 10px;
+  min-height: 150px;
   align-items: center;
   justify-content: center;
   @media only screen and (min-width: 1200px) {
-    margin-left: 2rem;
+    margin-leftn: 2rem;
   }
   @media only screen and (min-width: 1500px) {
-    margin-left: 3.5rem;
+    margin-leftn: 3.5rem;
   }
 `;
 
 export const MusicCard = styled.div`
   display: flex;
+  margin: 0 3rem;
   justify-content: center;
   align-items: center;
   width: 500px;
@@ -252,11 +258,11 @@ export const MusicCard = styled.div`
   }
   @media only screen and (max-width: 1200px) {
     width: 397px;
-    margin-right: 5rem;
+    margin-rightn: 5rem;
   }
   @media only screen and (max-width: 1000px) {
     width: 420px;
-    margin-right: 2.5rem;
+    margin-rightn: 2.5rem;
   }
 
   @media only screen and (max-width: 700px) {
@@ -354,6 +360,8 @@ export const MusicFeatureImg = styled.div`
 
 export const Img = styled.img`
   height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
   transition: all 0.5s ease;
   &:hover {
     transform: scale(1.06) rotate(360deg);

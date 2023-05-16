@@ -42,34 +42,33 @@ const Audio = () => {
           <MusicTitle>Playlists</MusicTitle>
           <MusicContentContainer>
             <MusicCardWrapper>
-              <MusicFeature>
-                <MusicImg src={SalmonImg} alt="Salmon Song" />
-                <MusicFeatureContent>
-                  <MusicFeatureTitle>Salmon and Hot Music</MusicFeatureTitle>
-                  <MusicFeatureText>
-                    The hot honey kinda sounds
-                  </MusicFeatureText>
-                  <MusicFeatureDetails>
-                    <MusicFeatureItem>
-                      <MusicItemTitle>Serving</MusicItemTitle>
-                      <MusicItemContent>
-                        <MusicItemIcon />
-                        <MusicItemText>2</MusicItemText>
-                      </MusicItemContent>
-                    </MusicFeatureItem>
-                    <MusicFeatureItem>
-                      <MusicItemTitle>Cook time</MusicItemTitle>
-                      <MusicItemText>35-45 min</MusicItemText>
-                    </MusicFeatureItem>
-                    <MusicFeatureItem>
-                      <MusicItemTitle>Difficulty level</MusicItemTitle>
-                      <MusicItemText>20%</MusicItemText>
-                    </MusicFeatureItem>
-                  </MusicFeatureDetails>
-                </MusicFeatureContent>
-              </MusicFeature>
               <MusicCardSection>
                 <MusicSmallCards>
+                <MusicCard>
+                    <Img src={ChickenImg} alt="Chicken Music" />
+                    <MusicCardContent>
+                      <MusicCardHeading>
+                        Pretzel-Crusted Chicken
+                      </MusicCardHeading>
+                      <MusicCardDetails>
+                        <MusicCardItems>
+                          <MusicCardTitle>Serving</MusicCardTitle>
+                          <MusicCardItem>
+                            <MusicCardIcon />
+                            <MusicCardText>2</MusicCardText>
+                          </MusicCardItem>
+                        </MusicCardItems>
+                        <MusicCardItems>
+                          <MusicCardTitle>duration</MusicCardTitle>
+                          <MusicCardText>4:16 min</MusicCardText>
+                        </MusicCardItems>
+                        <MusicCardItems>
+                          <MusicCardTitle>edit delete</MusicCardTitle>
+                          <MusicCardText>20%</MusicCardText>
+                        </MusicCardItems>
+                      </MusicCardDetails>
+                    </MusicCardContent>
+                  </MusicCard>
                   <MusicCard>
                     <Img src={ChickenImg} alt="Chicken Music" />
                     <MusicCardContent>
@@ -85,11 +84,61 @@ const Audio = () => {
                           </MusicCardItem>
                         </MusicCardItems>
                         <MusicCardItems>
-                          <MusicCardTitle>Cook time</MusicCardTitle>
-                          <MusicCardText>30-45 min</MusicCardText>
+                          <MusicCardTitle>duration</MusicCardTitle>
+                          <MusicCardText>4:16 min</MusicCardText>
                         </MusicCardItems>
                         <MusicCardItems>
-                          <MusicCardTitle>Difficulty level</MusicCardTitle>
+                          <MusicCardTitle>edit delete</MusicCardTitle>
+                          <MusicCardText>20%</MusicCardText>
+                        </MusicCardItems>
+                      </MusicCardDetails>
+                    </MusicCardContent>
+                  </MusicCard>
+                  <MusicCard>
+                    <Img src={ChickenImg} alt="Chicken Music" />
+                    <MusicCardContent>
+                      <MusicCardHeading>
+                        Pretzel-Crusted Chicken
+                      </MusicCardHeading>
+                      <MusicCardDetails>
+                        <MusicCardItems>
+                          <MusicCardTitle>Serving</MusicCardTitle>
+                          <MusicCardItem>
+                            <MusicCardIcon />
+                            <MusicCardText>2</MusicCardText>
+                          </MusicCardItem>
+                        </MusicCardItems>
+                        <MusicCardItems>
+                          <MusicCardTitle>duration</MusicCardTitle>
+                          <MusicCardText>4:16 min</MusicCardText>
+                        </MusicCardItems>
+                        <MusicCardItems>
+                          <MusicCardTitle>edit delete</MusicCardTitle>
+                          <MusicCardText>20%</MusicCardText>
+                        </MusicCardItems>
+                      </MusicCardDetails>
+                    </MusicCardContent>
+                  </MusicCard>
+                  <MusicCard>
+                    <Img src={ChickenImg} alt="Chicken Music" />
+                    <MusicCardContent>
+                      <MusicCardHeading>
+                        Pretzel-Crusted Chicken
+                      </MusicCardHeading>
+                      <MusicCardDetails>
+                        <MusicCardItems>
+                          <MusicCardTitle>Serving</MusicCardTitle>
+                          <MusicCardItem>
+                            <MusicCardIcon />
+                            <MusicCardText>2</MusicCardText>
+                          </MusicCardItem>
+                        </MusicCardItems>
+                        <MusicCardItems>
+                          <MusicCardTitle>duration</MusicCardTitle>
+                          <MusicCardText>4:16 min</MusicCardText>
+                        </MusicCardItems>
+                        <MusicCardItems>
+                          <MusicCardTitle>edit delete</MusicCardTitle>
                           <MusicCardText>20%</MusicCardText>
                         </MusicCardItems>
                       </MusicCardDetails>
@@ -118,14 +167,10 @@ const Audio = () => {
                       </MusicCardDetails>
                     </MusicCardContent>
                   </MusicCard>
-                </MusicSmallCards>
-                <MusicSmallCards>
                   <MusicCard>
-                    <Img src={PizzaImg} alt="Pizza Music" />
+                    <Img src={SaladImg} alt="Salad Music" />
                     <MusicCardContent>
-                      <MusicCardHeading>
-                        Italian Pizza with Cheese
-                      </MusicCardHeading>
+                      <MusicCardHeading>Sesame Asian Salad</MusicCardHeading>
                       <MusicCardDetails>
                         <MusicCardItems>
                           <MusicCardTitle>Serving</MusicCardTitle>
@@ -136,21 +181,19 @@ const Audio = () => {
                         </MusicCardItems>
                         <MusicCardItems>
                           <MusicCardTitle>Cook time</MusicCardTitle>
-                          <MusicCardText>30-45 min</MusicCardText>
+                          <MusicCardText>10-15 min</MusicCardText>
                         </MusicCardItems>
                         <MusicCardItems>
                           <MusicCardTitle>Difficulty level</MusicCardTitle>
-                          <MusicCardText>20%</MusicCardText>
+                          <MusicCardText>10%</MusicCardText>
                         </MusicCardItems>
                       </MusicCardDetails>
                     </MusicCardContent>
                   </MusicCard>
                   <MusicCard>
-                    <Img src={PastaImg} alt="Pasta Music" />
+                    <Img src={SaladImg} alt="Salad Music" />
                     <MusicCardContent>
-                      <MusicCardHeading>
-                        Pasta with creamy sause
-                      </MusicCardHeading>
+                      <MusicCardHeading>Sesame Asian Salad</MusicCardHeading>
                       <MusicCardDetails>
                         <MusicCardItems>
                           <MusicCardTitle>Serving</MusicCardTitle>

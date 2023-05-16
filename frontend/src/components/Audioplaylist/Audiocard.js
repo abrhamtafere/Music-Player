@@ -21,22 +21,18 @@ function Audiocard() {
         <MusicCard>
           <Img src={ChickenImg} alt="Chicken Music" />
           <MusicCardContent>
-            <MusicCardHeading>Pretzel-Crusted Chicken</MusicCardHeading>
+            <MusicCardHeading>Music name </MusicCardHeading>
+            <MusicCardTitle>Unknown artist </MusicCardTitle>
             <MusicCardDetails>
               <MusicCardItems>
-                <MusicCardTitle>Serving</MusicCardTitle>
+                <MusicCardTitle>disctiption about the music </MusicCardTitle>
                 <MusicCardItem>
                   <MusicCardIcon />
-                  <MusicCardText>2</MusicCardText>
+                  <MusicCardText>4:17 min</MusicCardText>
                 </MusicCardItem>
               </MusicCardItems>
               <MusicCardItems>
-                <MusicCardTitle>Cook time</MusicCardTitle>
-                <MusicCardText>30-45 min</MusicCardText>
-              </MusicCardItems>
-              <MusicCardItems>
-                <MusicCardTitle>Difficulty level</MusicCardTitle>
-                <MusicCardText>20%</MusicCardText>
+                <MusicCardTitle>Edit delete</MusicCardTitle>
               </MusicCardItems>
             </MusicCardDetails>
           </MusicCardContent>
