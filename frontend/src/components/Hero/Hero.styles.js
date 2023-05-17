@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ImgBg from "../../images/music1.jpg";
 
 export const HeroContainer = styled.div`
+border: solid 2px green;
   background-image: linear-gradient(
       to top right,
       rgba(11, 10, 10, 0.38),

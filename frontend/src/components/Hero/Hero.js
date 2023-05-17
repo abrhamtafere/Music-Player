@@ -26,11 +26,11 @@ const Hero = () => {
             <HeroText>
               Discover new music and artists on our website. Listen your favorite songs. Join our community of music lovers today.
             </HeroText>
-            <HeroBtn to="/playlist">
+            <a href="/audio#playlist">
               <Button primary big bigFont bigRadius>
                 Go to playlists
               </Button>
-            </HeroBtn>
+            </a>
           </HeroContentText>
         </HeroContent>
       </HeroContainer>

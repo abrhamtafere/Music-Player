@@ -49,6 +49,7 @@ const Navbar = () => {
                 </MenuLink>
               </MenuItem>
               <MenuItem>
+              <a href="#playlist"></a> 
                 <MenuLink onClick={closeMenu} to="/audio">
                   Audio Musics
                 </MenuLink>

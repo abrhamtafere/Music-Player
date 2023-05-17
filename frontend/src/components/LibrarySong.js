@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Playlist = ({ song, setCurrentSong, audioRef, isPlaying, songs, setSongs }) => {
+const LibrarySong = ({ song, setCurrentSong, audioRef, isPlaying, songs, setSongs }) => {
 	// Function
 	const songSelectHandler = async () => {
 		await setCurrentSong(song);
@@ -46,6 +46,7 @@ const LibrarySongContainer = styled.div`
 	display: flex;
 	transition: all 0.3s ease;
 	background-color: ${(p) => (p.isActive ? "pink" : "white")};
+	
 	&:hover {
 		background-color: lightblue;
 		transition: all 0.3s ease;
@@ -66,16 +67,17 @@ const LibrarySongDescription = styled.div`
 const Img = styled.img`
 	margin: 20px 0;
 	height: 60px;
+	border-radius: 50%;
 `;
 
 const H1 = styled.h3`
 	padding-left: 1rem;
-	font-size: 1rem;
+	font-size: 2rem;
 `;
 
 const H2 = styled.h4`
 	padding-left: 1rem;
-	font-size: 0.7rem;
+	font-size: 1rem;
 `;
 
-export default Playlist;
+export default LibrarySong;

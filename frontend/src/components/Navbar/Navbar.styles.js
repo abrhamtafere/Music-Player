@@ -15,6 +15,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  
 `;
 
 export const NavbarContainer = styled(Container)`
@@ -22,6 +23,7 @@ export const NavbarContainer = styled(Container)`
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  position: relative;
   // ${Container};
 `;
 

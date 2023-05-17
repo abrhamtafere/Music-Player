@@ -1,5 +1,6 @@
 //Wrap your components inside the router.
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './App.css';
 import { Hero } from "./components";
 import GlobalStyles from "./Globalstyles";
 import NotFound from "./pages/NotFound";

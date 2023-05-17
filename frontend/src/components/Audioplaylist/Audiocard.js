@@ -17,7 +17,6 @@ import {
 function Audiocard() {
   return (
     <div>
-      <MusicSmallCards>
         <MusicCard>
           <Img src={ChickenImg} alt="Chicken Music" />
           <MusicCardContent>
@@ -37,7 +36,6 @@ function Audiocard() {
             </MusicCardDetails>
           </MusicCardContent>
         </MusicCard>
-      </MusicSmallCards>
     </div>
   );
 }
