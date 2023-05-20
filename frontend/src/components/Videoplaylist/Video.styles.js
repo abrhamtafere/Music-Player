@@ -47,7 +47,7 @@ export const MusicInnerContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  
+  margin-left: 800px;
 `;
 
 

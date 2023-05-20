@@ -11,6 +11,9 @@ import Credit from "../components/Credit";
 // Import data
 import data from "../utils/data";
 
+import { useSelector, useDispatch } from 'react-redux';
+import { decrease, increase } from '../state/musicSlice'; 
+
 const Audio = () => {
   // Ref
   const audioRef = useRef(null);
@@ -24,6 +27,11 @@ const Audio = () => {
     currentTime: 0,
     duration: 0,
   });
+
+  //state from the toolkit
+  // const {songs, currentSong, isPlaying, libraryStatus, songInfo} = useSelector(state => state.music);
+
+  const dispatch = useDispatch();
   
   // Functions
   const updateTimeHandler = (e) => {
@@ -106,7 +114,6 @@ const TitleContainer = styled.div`
   background: linear-gradient(lightyellow, lightblue, black);
   width: 100%;
   height: 60px;
-  border: solid red 2px;
   @media screen and (max-width: 768px) {
     margin-left: 0;
   }
