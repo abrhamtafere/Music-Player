@@ -15,17 +15,23 @@ import {
   MenuItemBtn,
   MenuLinkBtn,
 } from "./Navbar.styles";
+import { useDispatch, useSelector } from "react-redux";
+import { setformStatus } from "../../state/musicSlice";
+
 const Navbar = () => {
   //click is the initial state and setclick will be the update state
   const [click, setClick] = useState(false);
   const [button, buttonClick] = useState(false);
-
+   
   //Create a function to handle the click state of the menu icon.
   //if the menu icon was the menu bar at the beginning when clicked it will have the close icon
   const handleClick = () => setClick(!click);
   //myself
-  const closeMenu = () => {};
+  // const closeMenu = () => {};
   const handleButton = () => buttonClick(!button);
+
+  const { formStatus } = useSelector(state => state.music);
+const dispatch = useDispatch();
 
   return (
     <div>
@@ -44,29 +50,29 @@ const Navbar = () => {
 
             <Menu onClick={handleClick} click={click}>
               <MenuItem>
-                <MenuLink onClick={closeMenu} to="/">
+                <MenuLink to="/">
                   Home
                 </MenuLink>
               </MenuItem>
               <MenuItem>
               <a href="#playlist"></a> 
-                <MenuLink onClick={closeMenu} to="/audio">
+                <MenuLink to="/audio">
                   Audio Musics
                 </MenuLink>
               </MenuItem>
               <MenuItem>
-                <MenuLink onClick={closeMenu} to="/video">
+                <MenuLink to="/video">
                   Video Musics
                 </MenuLink>
               </MenuItem>
               <MenuItemBtn onClick={handleButton}>
                 {button ? (   // here i will handle all or remove all styles
                   <MenuLinkBtn to="/addmusic">
-                    <Button primary>Add Musics</Button>
+                    <Button primary onClick = {() => dispatch(setformStatus(!formStatus))}>Add Musics</Button>
                   </MenuLinkBtn>
                 ) : (
                   <MenuLinkBtn to="/addmusic">
-                    <Button primary bigFont onClick={closeMenu}>
+                    <Button primary bigFont  onClick = {() => dispatch(setformStatus(!formStatus))}>
                       Add Musics
                     </Button>
                   </MenuLinkBtn>

@@ -3,18 +3,12 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+html{
+	overflow-x: hidden;
+	padding: 0 0px;
+	max-width: 100vw; 
+	/* display: flex; */
+}  
 body {
 	font-familyx: "Lato", sans-serif;
-}
-
-h1,
-h2,
-h3 {
-	colorx: rgb(54, 54, 54);
-}
-
-h3,
-h4 {
-	font-weightx: 400;
-	colorx: rgb(100, 100, 100);
 }

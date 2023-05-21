@@ -1,4 +1,5 @@
 import Navbar from "../Navbar/Navbar";
+import Form from "../Form/Form";
 import { Button } from "../../Globalstyles";
 import {
   HeroContainer,
@@ -8,7 +9,6 @@ import {
   HeroTitleText,
   HeroSubTitle,
   HeroText,
-  HeroBtn,
 } from "./Hero.styles";
 
 const Hero = () => {
@@ -16,6 +16,7 @@ const Hero = () => {
     <div>
       <HeroContainer>
         <Navbar />
+        <Form />
         <HeroContent>
           <HeroContentText>
             <HeroTitle>

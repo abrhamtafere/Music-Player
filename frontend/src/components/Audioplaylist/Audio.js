@@ -1,41 +1,17 @@
-import { OutlineButton } from "../../Globalstyles";
-import SalmonImg from "../../images/music1.jpg";
-import ChickenImg from "../../images/music1.jpg";
-import PizzaImg from "../../images/music1.jpg";
-import PastaImg from "../../images/music1.jpg";
-import SaladImg from "../../images/music1.jpg";
+import { useSelector } from "react-redux";
 import {
   MusicContainer,
   MusicWrapper,
   MusicTitle,
   MusicContentContainer,
   MusicCardWrapper,
-  MusicFeature,
-  MusicFeatureContent,
-  MusicFeatureTitle,
-  MusicFeatureText,
-  MusicFeatureDetails,
-  MusicFeatureItem,
-  MusicItemTitle,
-  MusicItemContent,
-  MusicItemIcon,
-  MusicItemText,
   MusicCardSection,
   MusicSmallCards,
-  MusicCard,
-  MusicCardContent,
-  MusicCardHeading,
-  MusicCardDetails,
-  MusicCardItems,
-  MusicCardTitle,
-  MusicCardItem,
-  MusicCardIcon,
-  MusicCardText,
-  MusicImg,
-  Img,
 } from "./Audio.styles";
 import Audiocard from "./Audiocard";
-const Audio = () => {
+const Audio = ({ song, audioRef }) => {
+  const { songs } = useSelector((state) => state.music);
+
   return (
     <div>
       <MusicWrapper>
@@ -45,12 +21,15 @@ const Audio = () => {
             <MusicCardWrapper>
               <MusicCardSection>
                 <MusicSmallCards>
-                  <Audiocard />
-                  <Audiocard />
-                  <Audiocard />
-                  <Audiocard />
-                  <Audiocard />
-                  <Audiocard />
+                  {songs.map((song) => (
+                    <>
+                      <Audiocard
+                        song={song}
+                        key={song.id}
+                        audioRef={audioRef}
+                      />
+                    </>
+                  ))}
                 </MusicSmallCards>
               </MusicCardSection>
             </MusicCardWrapper>

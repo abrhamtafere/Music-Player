@@ -3,11 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import { Hero } from "./components";
 import GlobalStyles from "./Globalstyles";
-import NotFound from "./pages/NotFound";
-import Home from "./pages/Home";
-import Audio from "./pages/Audio";
-import Video from "./pages/Video";
-import AboutUs from "./pages/AboutUs";
+import {Home, Audio, Video, AboutUs, NotFound} from "./pages";
 
 function App() {
   return (
@@ -18,7 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
           <Route path="/audio" element={<Audio />} />
           <Route path="/video" element={<Video />} />
-          <Route path="/about" element={<AboutUs />} />
+          {/* <Route path="/about" element={<AboutUs />} /> */}
           <Route path="/*" element={<NotFound />} />
         
       </Routes>
