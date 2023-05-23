@@ -47,7 +47,7 @@ const Player = ({ audioRef }) => {
 	};
 
 	const skipTrackHandler = async (direction) => {
-		let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+		let currentIndex = songs.findIndex((song) => song._id === currentSong._id);
 		if (direction === "skip-forward") {
 			await dispatch(setCurrentSong(songs[(currentIndex + 1) % songs.length]));
 			activeLibraryHandler(songs[(currentIndex + 1) % songs.length]);
@@ -67,7 +67,7 @@ const Player = ({ audioRef }) => {
 
 	const activeLibraryHandler = (newSong) => {
 		const newSongs = songs.map((song) => {
-			if (song.id === newSong.id) {
+			if (song._id === newSong._id) {
 				return {
 					...song,
 					active: true,

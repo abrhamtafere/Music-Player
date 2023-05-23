@@ -8,7 +8,7 @@ const Song = () => {
 
 	return (
 		<SongContainer>
-			<Img  src={currentSong.cover} alt={currentSong.name} isPlaying={isPlaying} />
+			<Img  src={`http://127.0.0.1:5000/uploads/images/` + currentSong.cover} alt={currentSong.name} isPlaying={isPlaying} />
 			<H1>{currentSong.name}</H1>
 			<H2>{currentSong.artist}</H2>
 		</SongContainer>

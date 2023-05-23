@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     if (file.fieldname === "audio") {
       cb(null, "uploads/audio/");
-    } else if (file.fieldname === "coverImage") {
+    } else if (file.fieldname === "cover") {
       cb(null, "uploads/images/");
     } else {
       cb(new Error("Invalid file type"));
@@ -44,7 +44,7 @@ router.post(
   "/songs",
   upload.fields([
     { name: "audio", maxCount: 1 },
-    { name: "coverImage", maxCount: 1 },
+    { name: "cover", maxCount: 1 },
   ]),
   saveSong
 );
@@ -52,7 +52,7 @@ router.put(
   "/songs/:id",
   upload.fields([
     { name: "audio", maxCount: 1 },
-    { name: "coverImage", maxCount: 1 },
+    { name: "cover", maxCount: 1 },
   ]),
   updateSong
 );

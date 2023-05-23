@@ -1,11 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { setCurrentSong, setSongs } from "../../state/musicSlice";
+import { setCurrentSong, setSongs, setformStatus2 } from "../../state/musicSlice";
+import {Link} from 'react-router-dom';
+import axios from "axios";
 
 const LibrarySong = ({ song, audioRef }) => {
 	
-	const {isPlaying, songs} = useSelector((state) => state.music);
+	const {isPlaying, songs, formStatus2} = useSelector((state) => state.music);
 
   const dispatch = useDispatch();
 	
@@ -16,7 +18,7 @@ const LibrarySong = ({ song, audioRef }) => {
 		const songList = songs;
 
 		const newSongs = songList.map((song) => {
-			if (song.id === curSong.id) {
+			if (song._id === curSong._id) {
 				return {
 					...song,
 					active: true,
@@ -36,12 +38,31 @@ const LibrarySong = ({ song, audioRef }) => {
 		}
 	};
 
+	function handleDelete(id) {
+    const confirm = window.confirm("Do you like to Delete?");
+    if (confirm) {
+      axios.delete("http://127.0.0.1:5000/api/songs/" + id).then((res) => {
+        alert("Record Deleted");
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
+      });
+    }
+  }
+
+
 	return (
 		<LibrarySongContainer onClick={songSelectHandler} isActive={song.active}>
-			<Img src={song.cover} alt={song.name}></Img>
+			<Img src={`http://127.0.0.1:5000/uploads/images/` + song.cover} alt={song.name}></Img>
 			<LibrarySongDescription>
 				<H1>{song.name}</H1>
 				<H2>{song.artist}</H2>
+			<div style={{display: 'flex', flexDirection: 'flex-col', height:'', justifyContent: 'end'}} >
+			<Link to={`/${song._id}`}  style={{color: 'blue',  cursor: 'pointer', textDecoration: 'none' }}
+			onClick={() => dispatch(setformStatus2(!formStatus2))}
+			>Edit</Link>
+			&nbsp;&nbsp;&nbsp;
+			<p  style={{color: 'red', cursor: 'pointer', textDecoration: 'none' }} onClick={() => handleDelete(song._id)}>Delet</p>
+			</div>
 			</LibrarySongDescription>
 		</LibrarySongContainer>
 	);

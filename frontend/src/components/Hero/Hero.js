@@ -10,8 +10,17 @@ import {
   HeroSubTitle,
   HeroText,
 } from "./Hero.styles";
+import { useDispatch, useSelector } from "react-redux";
+
+import { setLibraryStatus,  } from "../../state/musicSlice";
+
 
 const Hero = () => {
+
+  const { libraryStatus } = useSelector((state) => state.music);
+  const dispatch = useDispatch();
+
+
   return (
     <div>
       <HeroContainer>
@@ -27,11 +36,11 @@ const Hero = () => {
             <HeroText>
               Discover new music and artists on our website. Listen your favorite songs. Join our community of music lovers today.
             </HeroText>
-            <a href="/audio#playlist">
-              <Button primary big bigFont bigRadius>
+              <Button primary big bigFont bigRadius
+              onClick={()=> dispatch(setLibraryStatus(!libraryStatus))}
+              >
                 Go to playlists
               </Button>
-            </a>
           </HeroContentText>
         </HeroContent>
       </HeroContainer>

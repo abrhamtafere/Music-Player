@@ -1,32 +1,44 @@
 import React, { useState } from "react";
 import { Flex, Box, Heading, Button, Text } from "rebass";
 import { Label, Input } from "@rebass/forms";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const SongForm = ({ onSubmit, initialData }) => {
-  const [file, setFile] = useState(null);
-  const [coverImage, setCoverImage] = useState(null);
-  const [fileName, setFileName] = useState(initialData?.fileName || "");
-  const [artistName, setArtistName] = useState(initialData?.artistName || "");
+const SongForm = ({ initialData }) => {
+  const [audio, setAudio] = useState(null);
+  const [cover, setCover] = useState(null);
+  const [name, setName] = useState(initialData?.name || "");
+  const [artist, setArtist] = useState(initialData?.artist || "");
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
-    setFile(selectedFile);
-    setFileName(selectedFile.name);
+    setAudio(selectedFile);
+    setName(selectedFile.name);
   };
 
   const handleImageChange = (event) => {
-    const selectedFile = event.target.files[0];
-    setCoverImage(selectedFile);
+    const selectedImage = event.target.files[0];
+    setCover(selectedImage);
   };
+  // const handleAudioChange = (e) => {
+  //   e.preventDefault();
+  //   setAudio(e.target.files[0]);
+  // };
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("file", file);
-    formData.append("coverImage", coverImage);
-    formData.append("fileName", fileName);
-    formData.append("artistName", artistName);
-    onSubmit(formData);
+    formData.append("audio", audio);
+    formData.append("cover", cover);
+    formData.append("name", name);
+    formData.append("artist", artist);
+    //continue from this
+    axios.post("http://127.0.0.1:5000/api/songs", formData).then((res) => {
+      alert("Data Posted Successfully!");
+      navigate("/");
+    });
+    // onSubmit(formData);
   };
 
   return (
@@ -43,10 +55,10 @@ const SongForm = ({ onSubmit, initialData }) => {
           {initialData ? "Edit song" : "Add a new song"}
         </Heading>
         <Box as="form" onSubmit={handleSubmit}>
-          <Label htmlFor="file">Song File</Label>
+          <Label htmlFor="audio">Song audio</Label>
           <Input
-            id="file"
-            name="file"
+            id="audio"
+            name="audio"
             type="file"
             accept=".mp3"
             onChange={handleFileChange}
@@ -54,40 +66,40 @@ const SongForm = ({ onSubmit, initialData }) => {
           />
 
           {initialData && (
-            <Text sx={{ mb: 3 }}>Current file: {initialData.fileName}</Text>
+            <Text sx={{ mb: 3 }}>Current audio: {initialData.name}</Text>
           )}
 
-          <Label htmlFor="coverImage">Cover Image</Label>
+          <Label htmlFor="cover">Cover Image</Label>
           <Input
-            id="coverImage"
-            name="coverImage"
+            id="cover"
+            name="cover"
             type="file"
             // accept=".mp3"
-            onChange={handleFileChange}
+            onChange={handleImageChange}
             mb={3}
           />
 
           {initialData && (
-            <Text sx={{ mb: 3 }}>Current file: {initialData.fileName}</Text>
+            <Text sx={{ mb: 3 }}>Current cover image: {initialData.cover}</Text>
           )}
 
-          <Label htmlFor="artistName">Artist Name</Label>
+          <Label htmlFor="artist">Artist Name</Label>
           <Input
-            id="artistName"
-            name="artistName"
+            id="artist"
+            name="artist"
             type="text"
-            value={artistName}
-            onChange={(event) => setArtistName(event.target.value)}
+            value={artist}
+            onChange={(event) => setArtist(event.target.value)}
             mb={3}
           />
 
-          <Label htmlFor="fileName">File Name</Label>
+          <Label htmlFor="name">audio Name</Label>
           <Input
-            id="fileName"
-            name="fileName"
+            id="name"
+            name="name"
             type="text"
-            value={fileName}
-            onChange={(event) => setFileName(event.target.value)}
+            value={name}
+            onChange={(event) => setName(event.target.value)}
             mb={4}
           />
 

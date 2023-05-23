@@ -1,5 +1,5 @@
 //In the Navbar.js file
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiMenu, BiX } from "react-icons/bi";
 import { IconContext } from "react-icons/lib";
 import { Button } from "../../Globalstyles";
@@ -16,13 +16,15 @@ import {
   MenuLinkBtn,
 } from "./Navbar.styles";
 import { useDispatch, useSelector } from "react-redux";
-import { setformStatus } from "../../state/musicSlice";
+import { setCurrentSong, setformStatus, setSongs } from "../../state/musicSlice";
+import axios from "axios";
+import { baseURL } from "../../utils/baseURL";
 
 const Navbar = () => {
   //click is the initial state and setclick will be the update state
   const [click, setClick] = useState(false);
   const [button, buttonClick] = useState(false);
-   
+
   //Create a function to handle the click state of the menu icon.
   //if the menu icon was the menu bar at the beginning when clicked it will have the close icon
   const handleClick = () => setClick(!click);
@@ -30,8 +32,21 @@ const Navbar = () => {
   // const closeMenu = () => {};
   const handleButton = () => buttonClick(!button);
 
-  const { formStatus } = useSelector(state => state.music);
-const dispatch = useDispatch();
+  const { formStatus, songs, currentSong, updateStatus } = useSelector((state) => state.music);
+  const dispatch = useDispatch();
+
+  //from server
+  useEffect(() => {
+   axios
+      .get(`http://127.0.0.1:5000/api/songs`)
+      .then((res) => {
+        dispatch(setSongs(res.data.songs))
+        dispatch(setCurrentSong(songs[0]))
+        currentSong.active = true;
+      })
+      .catch((err) => console.log(err));
+    }, [updateStatus]);
+    console.log(songs);
 
   return (
     <div>
@@ -50,29 +65,32 @@ const dispatch = useDispatch();
 
             <Menu onClick={handleClick} click={click}>
               <MenuItem>
-                <MenuLink to="/">
-                  Home
-                </MenuLink>
+                <MenuLink to="/">Home</MenuLink>
               </MenuItem>
               <MenuItem>
-              <a href="#playlist"></a> 
-                <MenuLink to="/audio">
-                  Audio Musics
-                </MenuLink>
+                <a href="#playlist"></a>
+                <MenuLink to="/audio">Audio Musics</MenuLink>
               </MenuItem>
               <MenuItem>
-                <MenuLink to="/video">
-                  Video Musics
-                </MenuLink>
+                <MenuLink to="/video">Video Musics</MenuLink>
               </MenuItem>
               <MenuItemBtn onClick={handleButton}>
-                {button ? (   // here i will handle all or remove all styles
-                  <MenuLinkBtn to="/addmusic">
-                    <Button primary onClick = {() => dispatch(setformStatus(!formStatus))}>Add Musics</Button>
+                {button ? ( // here i will handle all or remove all styles
+                  <MenuLinkBtn to="#">
+                    <Button
+                      primary
+                      onClick={() => dispatch(setformStatus(!formStatus))}
+                    >
+                      Add Musics
+                    </Button>
                   </MenuLinkBtn>
                 ) : (
-                  <MenuLinkBtn to="/addmusic">
-                    <Button primary bigFont  onClick = {() => dispatch(setformStatus(!formStatus))}>
+                  <MenuLinkBtn to="#">
+                    <Button
+                      primary
+                      bigFont
+                      onClick={() => dispatch(setformStatus(!formStatus))}
+                    >
                       Add Musics
                     </Button>
                   </MenuLinkBtn>

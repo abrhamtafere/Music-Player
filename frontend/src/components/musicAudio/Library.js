@@ -20,12 +20,13 @@ const {libraryStatus, songs} = useSelector((state) => state.music);
 			</Button>
 			</SubContainer>
 			<SongContainer>
-				{songs.map((song) => (
+				{songs.map((song) => (<>
 					<LibrarySong
 						song={song}
-						key={song.id}
+						key={song._id}
 						audioRef={audioRef}
 					/>
+					</>
 				))}
 			</SongContainer>
 			

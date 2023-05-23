@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentSong, setSongs } from "../../state/musicSlice";
-import Player from "../musicAudio/Player";
 import {
   MusicCard,
   MusicCardContent,
@@ -53,7 +52,7 @@ function Audiocard({ song, audioRef }) {
   return (
     <div>
       <MusicCard onClick={songSelectHandler} isActive={song.active}>
-        <Img src={song.cover} alt={song.name} />
+        <Img src={`http://127.0.0.1:5000/uploads/images/` + song.cover} alt={song.name} />
         <MusicCardContent>
           <MusicCardHeading>{song.name}</MusicCardHeading>
           <MusicCardTitle>{song.artist}</MusicCardTitle>

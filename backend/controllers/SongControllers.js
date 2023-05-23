@@ -33,16 +33,16 @@ module.exports.getSong = async (req, res) => {
 // Create a new song
 module.exports.saveSong = async (req, res) => {
   try {
-    const { fileName, artist } = req.body;
+    const { name, artist } = req.body;
     // const audio = req.file.filename;
     const audio = req.files["audio"][0].filename;
-    const coverImage = req.files["coverImage"][0].filename;
+    const cover = req.files["cover"][0].filename;
 
     const song = await SongModel.create({
-      fileName,
+      name,
       artist,
       audio,
-      coverImage,
+      cover,
     });
 
     res.status(201).json(song);
@@ -57,11 +57,11 @@ module.exports.updateSong = async (req, res) => {
     // const { fileName, artist } = req.body;
     // const audio = req.file?.filename;
 
-    const fileName = req.body.fileName || SongModel.fileName;
+    const name = req.body.name || SongModel.name;
     const artist = req.body.artist || SongModel.artist;
-    const coverImage = req.files.coverImage
-      ? req.files["coverImage"][0].filename
-      : SongModel.coverImage;
+    const cover = req.files.cover
+      ? req.files["cover"][0].filename
+      : SongModel.cover;
     const audio = req.files.audio ? req.files["audio"][0].filename : SongModel.audio;
 
     // const audio = req.files['audio'][0].filename;
@@ -69,7 +69,7 @@ module.exports.updateSong = async (req, res) => {
 
     const song = await SongModel.findByIdAndUpdate(
       req.params.id,
-      { fileName, artist, audio, coverImage },
+      { name, artist, audio, cover },
       { new: true }
     );
 
@@ -97,3 +97,4 @@ module.exports.deleteSong = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+

@@ -10,6 +10,8 @@ export const musicSlice = createSlice({
     libraryStatus: false,
     songInfo: { currentTime: 0, duration: 0 },
     formStatus: false,
+    formStatus2: false,
+    updateStatus: false,
 
   }, 
   reducers: {
@@ -37,10 +39,16 @@ export const musicSlice = createSlice({
     setformStatus: (state, action) => {
       state.formStatus = action.payload;
     },
+    setformStatus2: (state, action) => {
+      state.formStatus2 = action.payload;
+    },
+    setUpdateStatus: (state, action) => {
+      state.updateStatus = action.payload;
+    },
     
   },
 });
 
 // case under reducers becomes an action
-export const { increase, decrease, setLibraryStatus, setIsPlaying, setSongInfo, setSongs, setCurrentSong, setformStatus } = musicSlice.actions;
+export const { increase, decrease, setLibraryStatus, setIsPlaying, setSongInfo, setSongs, setCurrentSong, setformStatus, setformStatus2, setUpdateStatus} = musicSlice.actions;
 export default musicSlice.reducer;

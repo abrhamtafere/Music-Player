@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { setformStatus } from "../../state/musicSlice";
 import { Label, Input } from '@rebass/forms';
 import { Box } from "rebass";
-import RegistrationForm from "./RegistrationForm";
+// import RegistrationForm from "./RegistrationForm";
 import SongForm from "./SongForm";
 
 function Form() {

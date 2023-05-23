@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-// import "./App.css";
+import axios from 'axios';
 
 // Import components
 import {Song, Player,  Library, Nav, Credit} from "../components";
 import { useSelector, useDispatch } from 'react-redux';
 import { setSongs, setSongInfo, setCurrentSong } from "../state/musicSlice";
+import { baseURL } from "../utils/baseURL";
 
 const Audio = () => {
   // Ref
@@ -17,10 +18,10 @@ const Audio = () => {
   const dispatch = useDispatch();
 
   // to assign initial value for currentSong 
-  useEffect(() => {  
-    console.log(currentSong)
-    dispatch(setCurrentSong(songs[0])); // default
-  }, []);
+  // useEffect(() => {  
+  //   console.log(currentSong)
+  //   dispatch(setCurrentSong(songs[0])); // default
+  // }, []);
   
 
   // Functions
@@ -31,12 +32,12 @@ const Audio = () => {
   };
 
   const songEndHandler = async () => {
-    let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+    let currentIndex = songs.findIndex((song) => song._id === currentSong._id);
     let nextSong = songs[(currentIndex + 1) % songs.length];
     await dispatch(setCurrentSong(nextSong));
 
     const newSongs = songs.map((song) => {
-      if (song.id === nextSong.id) {
+      if (song._id === nextSong._id) {
         return {
           ...song,
           active: true,
@@ -57,7 +58,7 @@ const Audio = () => {
 
   return (
     <AudioContainer libraryStatus={libraryStatus}>
-      <TitleContainer />
+      {/* <TitleContainer /> */}
       <Nav  />
       <Song />
       <Player
@@ -72,7 +73,7 @@ const Audio = () => {
 				onTimeUpdate={updateTimeHandler}
 				onEnded={songEndHandler}
 				ref={audioRef}
-				src={currentSong.audio}
+				src={`http://127.0.0.1:5000/uploads/audio/` + currentSong.audio}
       />
     </AudioContainer>
   );
