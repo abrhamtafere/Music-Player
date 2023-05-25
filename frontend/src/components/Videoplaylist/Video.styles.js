@@ -7,12 +7,47 @@ export const MusicWrapper = styled.section`
   justify-content: center;
   align-items: center;
   margin: 6rem 0rem;
+
+  //scroll
+`;
+
+export const Small = styled.small`
+  color: grey;
+`;
+export const Mobile = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 10px 20px;
+margin: ;
+@media only screen and (min-width: 700px) {
+ display: none;
+}
+`;
+
+export const Middle = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 10px 20px;
+margin: ;
+@media only screen and (min-width: 700px && max-width: 1380px) {
+ display: none;
+}
+`;
+
+export const Pc = styled.div`
+display: flex;
+@media only screen and (max-width: 1380px) {
+ display: none;
+}
 `;
 
 export const MusicContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   ${Container};
+  padding: 0;
 `;
 
 export const MusicTitle = styled.h2`
@@ -27,7 +62,7 @@ export const MusicTitle = styled.h2`
 
 export const MusicContentContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   max-width: 100vw;
@@ -35,11 +70,16 @@ export const MusicContentContainer = styled.div`
 
 export const MusicContentContainer2 = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   max-width: 100vw;
   overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+    width: 5px;
+    background-color: green;
+}
 `;
 
 export const MusicInnerContainer = styled.div`
@@ -57,6 +97,7 @@ export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 300px;
   grid-template-rows: 210px 210px;
+  
   grid-template-areas: "image" "text" "stats";
   border-radius: 0px 80px 0px 80px;
   background: #fff;
@@ -79,8 +120,10 @@ export const CardWrapper = styled.div`
   }
 `;
 
-export const CardImage = styled.video`
-  grid-area: image;
+
+
+export const Video = styled.video`
+  width: 100%;
   background-image: url(${({ background }) => background});
   // border-top-left-radius: 15px;
   // border-top-right-radius: 15px;

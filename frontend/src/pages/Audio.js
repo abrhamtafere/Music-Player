@@ -3,7 +3,7 @@ import styled from "styled-components";
 import axios from 'axios';
 
 // Import components
-import {Song, Player,  Library, Nav, Credit} from "../components";
+import {Song, Player,  Library, Nav, Credit, Navbar} from "../components";
 import { useSelector, useDispatch } from 'react-redux';
 import { setSongs, setSongInfo, setCurrentSong } from "../state/musicSlice";
 import { baseURL } from "../utils/baseURL";
@@ -57,9 +57,9 @@ const Audio = () => {
   };
 
   return (
+  <>
     <AudioContainer libraryStatus={libraryStatus}>
       {/* <TitleContainer /> */}
-      <Nav  />
       <Song />
       <Player
         audioRef={audioRef}
@@ -76,6 +76,7 @@ const Audio = () => {
 				src={`http://127.0.0.1:5000/uploads/audio/` + currentSong.audio}
       />
     </AudioContainer>
+    </>
   );
 };
 

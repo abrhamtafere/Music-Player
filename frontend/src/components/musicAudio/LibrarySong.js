@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { setCurrentSong, setSongs, setformStatus2 } from "../../state/musicSlice";
+import { setCurrentSong, setSongs, setformStatus2, deleteSong } from "../../state/musicSlice";
 import {Link} from 'react-router-dom';
 import axios from "axios";
 
@@ -38,17 +38,22 @@ const LibrarySong = ({ song, audioRef }) => {
 		}
 	};
 
-	function handleDelete(id) {
-    const confirm = window.confirm("Do you like to Delete?");
-    if (confirm) {
-      axios.delete("http://127.0.0.1:5000/api/songs/" + id).then((res) => {
-        alert("Record Deleted");
-        // eslint-disable-next-line no-restricted-globals
-        location.reload();
-      });
-    }
-  }
+	// function handleDelete(id) {
+  //   const confirm = window.confirm("Do you like to Delete?");
+  //   if (confirm) {
+  //     axios.delete("http://127.0.0.1:5000/api/songs/" + id).then((res) => {
+  //       alert("Record Deleted");
+  //       // eslint-disable-next-line no-restricted-globals
+  //       location.reload();
+  //     });
+  //   }
+  // }
 
+	const handleDeleteSong = (song) => {
+    if (window.confirm(`Are you sure you want to delete ${song.name}?`)) {
+      dispatch(deleteSong(song._id));
+    }
+  };
 
 	return (
 		<LibrarySongContainer onClick={songSelectHandler} isActive={song.active}>
@@ -57,11 +62,11 @@ const LibrarySong = ({ song, audioRef }) => {
 				<H1>{song.name}</H1>
 				<H2>{song.artist}</H2>
 			<div style={{display: 'flex', flexDirection: 'flex-col', height:'', justifyContent: 'end'}} >
-			<Link to={`/${song._id}`}  style={{color: 'blue',  cursor: 'pointer', textDecoration: 'none' }}
+			<Link to={`/update/${song._id}`}  style={{color: 'blue',  cursor: 'pointer', textDecoration: 'none' }}
 			onClick={() => dispatch(setformStatus2(!formStatus2))}
 			>Edit</Link>
 			&nbsp;&nbsp;&nbsp;
-			<p  style={{color: 'red', cursor: 'pointer', textDecoration: 'none' }} onClick={() => handleDelete(song._id)}>Delet</p>
+			<p  style={{color: 'red', cursor: 'pointer', textDecoration: 'none' }} onClick={() => handleDeleteSong(song)}>Delet</p>
 			</div>
 			</LibrarySongDescription>
 		</LibrarySongContainer>

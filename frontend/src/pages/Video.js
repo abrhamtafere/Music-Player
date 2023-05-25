@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Videocard } from "../components";
+import { Navbar, Videocard } from "../components";
 import { Container } from "../Globalstyles";
 import img1 from "../images/music2.jpg";
 
 function Video() {
   return (
     <div>
+      <Navbar />
       <MusicWrapper>
         <MusicTitle>Video Playlists</MusicTitle>
         <MusicContainer>

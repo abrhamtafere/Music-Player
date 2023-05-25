@@ -4,7 +4,7 @@ import data from "../utils/data";
 export const musicSlice = createSlice({
   name: "music",
   initialState: {
-    songs: data(),
+    songs: [],
     currentSong: data()[0],
     isPlaying: false,
     libraryStatus: false,
@@ -12,15 +12,58 @@ export const musicSlice = createSlice({
     formStatus: false,
     formStatus2: false,
     updateStatus: false,
-
-  }, 
+    isLoading: false,
+  },
   reducers: {
-    increase: (state) => {
-      state.value += 1;
+    getSongs: (state) => {
+      state.isLoading = true;
     },
-    decrease: (state) => {
-      state.value -= 1;
+    getSongsSuccess: (state, action) => {
+      state.songs = action.payload;
+      state.currentSong = state.songs[0];
+      state.currentSong = state.songs[0];
+      state.isLoading = false;
     },
+    getSongsFailed: (state) => {
+      state.isLoading = false;
+    },
+
+    createSong: (state) => {
+      state.loading = true;
+    },
+    createSongSuccess: (state, action) => {
+      state.loading = false;
+      state.songs.push(action.payload);
+    },
+    createSongFailed: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    updateSong: (state) => {
+      state.loading = true;
+    },
+    updateSongSuccess: (state, action) => {
+      state.loading = false;
+      state.songs = state.songs.map((song) =>
+        song._id === action.payload._id ? action.payload : song
+      );
+    },
+    updateSongFailed: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    deleteSong: (state) => {
+      state.loading = true;
+    },
+    deleteSongSuccess: (state, action) => {
+      state.loading = false;
+      state.songs = state.songs.filter((song) => song._id !== action.payload);
+    },
+    deleteSongFailed: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+
     setLibraryStatus: (state, action) => {
       state.libraryStatus = action.payload;
     },
@@ -45,10 +88,32 @@ export const musicSlice = createSlice({
     setUpdateStatus: (state, action) => {
       state.updateStatus = action.payload;
     },
-    
   },
 });
 
 // case under reducers becomes an action
-export const { increase, decrease, setLibraryStatus, setIsPlaying, setSongInfo, setSongs, setCurrentSong, setformStatus, setformStatus2, setUpdateStatus} = musicSlice.actions;
+export const {
+  increase,
+  decrease,
+  setLibraryStatus,
+  setIsPlaying,
+  setSongInfo,
+  setSongs,
+  setCurrentSong,
+  setformStatus,
+  setformStatus2,
+  setUpdateStatus,
+  getSongs,
+  getSongsSuccess,
+  getSongsFailed,
+  createSong,
+  createSongSuccess,
+  createSongFailed,
+  updateSong,
+  updateSongSuccess,
+  updateSongFailed,
+  deleteSong,
+  deleteSongSuccess,
+  deleteSongFailed,
+} = musicSlice.actions;
 export default musicSlice.reducer;

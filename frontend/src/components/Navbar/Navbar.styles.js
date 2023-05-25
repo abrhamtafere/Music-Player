@@ -100,6 +100,7 @@ export const MenuLink = styled(Link)`
   font-size: 2rem;
   color: #fff;
   display: flex;
+
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;

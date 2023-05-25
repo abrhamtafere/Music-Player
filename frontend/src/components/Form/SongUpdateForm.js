@@ -4,9 +4,9 @@ import { Label, Input } from "@rebass/forms";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { setformStatus2, setUpdateStatus } from "../../state/musicSlice";
+import { setformStatus2, setUpdateStatus, updateSong } from "../../state/musicSlice";
 
-const SongUpdateForm = ({ initialData }) => {
+const SongUpdateForm = ({ initialData, id }) => {
   // const [audio, setAudio] = useState(null);
   // const [cover, setCover] = useState(null);
   const [name, setName] = useState(initialData?.name || "");
@@ -37,12 +37,13 @@ const SongUpdateForm = ({ initialData }) => {
     // formData.append("cover", initialData.cover);
     formData.append("name", name);
     formData.append("artist", artist);
-    //continue from this
-    axios.put("http://127.0.0.1:5000/api/songs/" + initialData._id, formData).then((res) => {
+    //continue from this initialData._id
+    dispatch(updateSong({formData: formData, _id: id}));
       alert("Data Updated Successfully!");
       dispatch(setUpdateStatus(!updateStatus))
       navigate("/");
-    });
+      // eslint-disable-next-line no-restricted-globals
+      location.reload();
     // onSubmit(formData);
   };
 
@@ -78,7 +79,7 @@ const SongUpdateForm = ({ initialData }) => {
             type="text"
             value={name}
             onChange={(event) => setName(event.target.value)}
-            mb={4}
+            mb={4} 
           />
 
           <Button type="submit" sx={{ width: "100%", background: "blue" }}

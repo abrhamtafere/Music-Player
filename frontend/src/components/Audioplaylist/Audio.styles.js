@@ -61,10 +61,19 @@ export const MusicCardWrapper = styled.div`
   margin-top: 6rem;
   flex-direction: row;
   max-width: 100vw;
-  overflow: scroll;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+    width: 5px;
+    background-color: green;
+}
   @media only screen and (min-width: 1800px) {
     flex-direction: row;
   }
+`;
+
+export const Small = styled.small`
+  color: grey;
 `;
 
 export const MusicFeature = styled.div`
@@ -224,7 +233,7 @@ export const MusicCardSection = styled.div`
 export const MusicSmallCards = styled.div`
   display: flex;
   flex-direction: row;
-  overflow: scroll;
+  // overflow-x: scroll;
   padding: 10px;
   min-height: 150px;
   align-items: center;

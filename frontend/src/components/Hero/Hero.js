@@ -13,6 +13,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 import { setLibraryStatus,  } from "../../state/musicSlice";
+import { Link } from "react-router-dom";
 
 
 const Hero = () => {
@@ -36,11 +37,14 @@ const Hero = () => {
             <HeroText>
               Discover new music and artists on our website. Listen your favorite songs. Join our community of music lovers today.
             </HeroText>
-              <Button primary big bigFont bigRadius
+            <Link to='/audio'>
+            <Button primary big bigFont bigRadius
               onClick={()=> dispatch(setLibraryStatus(!libraryStatus))}
               >
                 Go to playlists
               </Button>
+            </Link>
+              
           </HeroContentText>
         </HeroContent>
       </HeroContainer>

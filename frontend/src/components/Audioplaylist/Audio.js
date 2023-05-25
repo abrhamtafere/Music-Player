@@ -7,6 +7,7 @@ import {
   MusicCardWrapper,
   MusicCardSection,
   MusicSmallCards,
+  Small
 } from "./Audio.styles";
 import Audiocard from "./Audiocard";
 const Audio = ({ song, audioRef }) => {
@@ -18,6 +19,7 @@ const Audio = ({ song, audioRef }) => {
         <MusicContainer>
           <MusicTitle>Playlists</MusicTitle>
           <MusicContentContainer>
+          <Small>see more by scrolling horizontally</Small>
             <MusicCardWrapper>
               <MusicCardSection>
                 <MusicSmallCards>

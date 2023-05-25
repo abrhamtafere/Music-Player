@@ -17,13 +17,9 @@ function UpdateForm() {
        .then((res) => {
          setInitialData(res.data)
          console.log('updateForm');
-         console.log(res.data);
-        //  dispatch(setCurrentSong(songs[0]))
-        //  currentSong.active = true;
        })
        .catch((err) => console.log(err));
      }, []);
-     console.log(songs);
 
   return (
     <FormContainer formStatus2={formStatus2}>
@@ -31,7 +27,7 @@ function UpdateForm() {
         <H1>Music Form</H1>
       </SubContainer>
       <FormDetails>
-        <SongUpdateForm initialData={initialData} />
+        <SongUpdateForm initialData={initialData} id={id} />
         {/* <RegistrationForm /> */}
       </FormDetails>
     </FormContainer>

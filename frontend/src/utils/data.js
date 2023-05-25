@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 function chillHop() {
 	return [
 		{
-			name: "Dawit Eco",
+			name: "Loading...",
 			cover:
 				"1684676976438-FB_IMG_15685197424924280.jpg",
 			artist: "Aso, Middle School, Aviino",

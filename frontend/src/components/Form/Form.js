@@ -29,7 +29,7 @@ function Form() {
 // onClick={() => dispatch(setFormStatus(!formStatus))}
 const FormContainer = styled.div`
   position: fixed;
-  z-index: 9;
+  z-index: 40;
   top: 80px;
   padding: 0 0 50px 0;
   right: 0;
@@ -39,7 +39,7 @@ const FormContainer = styled.div`
   box-shadow: 2px 2px 50px rgb(204, 204, 204);
   user-select: none;
   overflow: scroll;
-  transform: translateX(${(p) => (p.formStatus ? "0%" : "0%")});
+  transform: translateY(${(p) => (p.formStatus ? "0%" : "100%")});
   transition: all 0.5s ease;
   opacity: ${(p) => (p.formStatus ? "100" : "0")};
   scrollbar-width: thin;

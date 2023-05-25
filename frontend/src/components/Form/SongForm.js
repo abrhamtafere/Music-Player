@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Flex, Box, Heading, Button, Text } from "rebass";
+import { Flex, Box, Heading, Button, Text, Link } from "rebass";
 import { Label, Input } from "@rebass/forms";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { createSong, setformStatus } from "../../state/musicSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const SongForm = ({ initialData }) => {
   const [audio, setAudio] = useState(null);
@@ -34,12 +35,18 @@ const SongForm = ({ initialData }) => {
     formData.append("name", name);
     formData.append("artist", artist);
     //continue from this
-    axios.post("http://127.0.0.1:5000/api/songs", formData).then((res) => {
-      alert("Data Posted Successfully!");
-      navigate("/");
-    });
+    // axios.post("http://127.0.0.1:5000/api/songs", formData).then((res) => {
+    //   alert("Data Posted Successfully!");
+    //   navigate("/");
+    // });
     // onSubmit(formData);
+    dispatch(createSong(formData));
+    alert("Data Posted Successfully!");
+    navigate("/");
   };
+
+  const { formStatus } = useSelector((state) => state.music);
+  const dispatch = useDispatch();
 
   return (
     <Flex
@@ -60,9 +67,11 @@ const SongForm = ({ initialData }) => {
             id="audio"
             name="audio"
             type="file"
-            accept=".mp3"
+            accept="audio/*"
+            required
             onChange={handleFileChange}
             mb={3}
+            sx={{ cursor: 'pointer' }}
           />
 
           {initialData && (
@@ -74,9 +83,12 @@ const SongForm = ({ initialData }) => {
             id="cover"
             name="cover"
             type="file"
+            required
+            accept="image/*"
             // accept=".mp3"
             onChange={handleImageChange}
             mb={3}
+            sx={{ cursor: 'pointer' }}
           />
 
           {initialData && (
@@ -103,11 +115,18 @@ const SongForm = ({ initialData }) => {
             mb={4}
           />
 
-          <Button type="submit" sx={{ width: "100%", background: "blue" }}>
+          <Button type="submit" sx={{ width: "100%", background: "blue", cursor: 'pointer' }} 
+          >
             {initialData ? "Save changes" : "Add song"}
           </Button>
+          
+            <Button type="button" sx={{ width: "100%", background: "#EE7013", marginTop: '10px', cursor: 'pointer' }}
+            onClick={() => dispatch(setformStatus(!formStatus))}>
+              {initialData ? "Save changes" : "Cancel"}
+            </Button>
+      </Box><>
+          </>
         </Box>
-      </Box>
     </Flex>
   );
 };
