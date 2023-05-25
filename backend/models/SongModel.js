@@ -16,7 +16,7 @@ const songSchema = new mongoose.Schema({
   artist: {
     type: String,
     default: "Unknown Artist",
-  },
+  }, 
   audio: {
     type: String,
     required: [true, "Music is required!"],
