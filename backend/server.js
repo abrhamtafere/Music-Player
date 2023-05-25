@@ -38,4 +38,9 @@ app.use("/api", SongRoute);
 // Serve audio files
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-app.listen(PORT, () => console.log(`Listening at ${PORT}`));
+if(process.env.PORT){
+  app.listen(PORT, () => console.log(`Listening at ${PORT}`));
+}
+
+module.exports = server;
+
