@@ -52,7 +52,7 @@ export const musicSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
-    deleteSong: (state) => {
+    deleteSong: (state) => { 
       state.loading = true;
     },
     deleteSongSuccess: (state, action) => {
