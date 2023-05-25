@@ -30,10 +30,10 @@ function Form() {
 const FormContainer = styled.div`
   position: fixed;
   z-index: 40;
-  top: 80px;
+  top: 60px;
   padding: 0 0 50px 0;
   right: 0;
-  width: 40rem;
+  width: 30rem;
   height: 100%;
   background-color: white;
   box-shadow: 2px 2px 50px rgb(204, 204, 204);
@@ -65,7 +65,7 @@ const FormContainer = styled.div`
 const H1 = styled.h2``;
 
 const SubContainer = styled.div`
-  padding: 2rem;
+  padding: 1rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -73,7 +73,7 @@ const SubContainer = styled.div`
 
 const FormDetails = styled.div`
  border-top: solid pink;
-  padding: 2rem;
+  padding: 0 2rem;
   width: 100%;
   display: flex;
   flex-direction: flex-col;

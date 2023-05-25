@@ -96,8 +96,8 @@ export const MusicInnerContainer = styled.div`
 
 export const CardWrapper = styled.div`
   display: grid;
-  grid-template-columns: 300px;
-  grid-template-rows: 210px 210px;
+  grid-template-columns: 250px;
+  grid-template-rows: 160px 210px;
   
   grid-template-areas: "image" "text" "stats";
   border-radius: 0px 80px 0px 80px;

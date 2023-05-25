@@ -8,7 +8,7 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 999;
-  height: 80px;
+  height: 60px;
   background-color: rgba(0, 0, 0, 0.5);
   /* box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5); */
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
@@ -87,7 +87,7 @@ export const Menu = styled.ul`
     width: 100%;
     height: 100vh;
     position: absolute;
-    top: 80px;
+    top: 70px;
     left: ${({ click }) => (click ? "0" : "-100%")};
     background-color: rgba(0, 0, 0, 0.9);
     transition: all 0.5s ease;

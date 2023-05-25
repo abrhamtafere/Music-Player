@@ -74,7 +74,7 @@ const LibrarySong = ({ song, audioRef }) => {
 };
 const LibrarySongContainer = styled.div`
 	padding: 0 2rem 0 2rem;
-	height: 100px;
+	height: 80px;
 	width: 100%;
 	display: flex;
 	transition: all 0.3s ease;
@@ -98,9 +98,9 @@ const LibrarySongDescription = styled.div`
 `;
 
 const Img = styled.img`
-	margin: 20px 0;
-	width: 70px;
-	height: 70px;
+	margin: 10px 0;
+	width: 60px;
+	height: 60px;
 	border-radius: 50%;
 `;
 

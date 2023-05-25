@@ -36,10 +36,10 @@ const {libraryStatus, songs} = useSelector((state) => state.music);
 const LibraryContainer = styled.div`
 	position: fixed;
 	z-index: 9;
-	top: 80px;
+	top: 60px;
 	padding: 0 0 50px 0;
 	left: 0;
-	width: 35rem;
+	width: 30rem;
 	height: 100%;
 	background-color: white;
 	box-shadow: 2px 2px 50px rgb(204, 204, 204);
@@ -78,7 +78,7 @@ const H1 = styled.h2`
 `;
 
 const SubContainer = styled.div`
-padding: 2rem;
+padding: 1.5rem;
 width: 100%;
 display: flex;
 justify-content: space-between;

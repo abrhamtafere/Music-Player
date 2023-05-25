@@ -251,8 +251,8 @@ export const MusicCard = styled.div`
   margin: 0 3rem;
   justify-content: center;
   align-items: center;
-  width: 500px;
-  height: 130px;
+  width: 400px;
+  height: 120px;
   background: #ffffff;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
   border-radius: 20px;

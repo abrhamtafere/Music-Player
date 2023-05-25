@@ -72,14 +72,14 @@ const Navbar = () => {
 
             <Menu onClick={handleClick} click={click}>
               <MenuItem>
-                <MenuLink  className={location.pathname === '/' ? 'active' : ''} to="/">Home</MenuLink>
+                <MenuLink  className={location.pathname === '/' ? 'activex' : ''} to="/">Home</MenuLink>
               </MenuItem>
               <MenuItem>
                 <a href="#playlist"></a>
-                <MenuLink  className={location.pathname === '/audio' ? 'active' : ''} to="/audio">Audio Musics</MenuLink>
+                <MenuLink  className={location.pathname === '/audio' ? 'activex' : ''} to="/audio">Audio Musics</MenuLink>
               </MenuItem>
               <MenuItem>
-                <MenuLink className={location.pathname === '/video' ? 'active' : ''} to="/video">Video Musics</MenuLink>
+                <MenuLink className={location.pathname === '/video' ? 'activex' : ''} to="/video">Video Musics</MenuLink>
               </MenuItem>
               {location.pathname === '/' ?
               <MenuItemBtn onClick={handleButton}>

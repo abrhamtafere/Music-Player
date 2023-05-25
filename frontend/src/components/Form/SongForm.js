@@ -58,7 +58,7 @@ const SongForm = ({ initialData }) => {
       }}
     >
       <Box sx={{ maxWidth: "400px", width: "100%", px: 3 }}>
-        <Heading sx={{ mb: 4 }}>
+        <Heading sx={{ mb: 1 }}>
           {initialData ? "Edit song" : "Add a new song"}
         </Heading>
         <Box as="form" onSubmit={handleSubmit}>
