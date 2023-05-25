@@ -77,6 +77,7 @@ const FormDetails = styled.div`
   width: 100%;
   display: flex;
   flex-direction: flex-col;
+  justify-content: center;
 `;
 
 const Button = styled.button`

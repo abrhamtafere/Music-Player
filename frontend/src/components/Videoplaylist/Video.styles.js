@@ -15,32 +15,32 @@ export const Small = styled.small`
   color: grey;
 `;
 export const Mobile = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 10px 20px;
-margin: ;
-@media only screen and (min-width: 700px) {
- display: none;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 20px;
+  margin: ;
+  @media only screen and (min-width: 700px) {
+    display: none;
+  }
 `;
 
 export const Middle = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 10px 20px;
-margin: ;
-@media only screen and (min-width: 700px && max-width: 1380px) {
- display: none;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 20px;
+  margin: ;
+  @media only screen and (min-width: 700px && max-width: 1380px) {
+    display: none;
+  }
 `;
 
 export const Pc = styled.div`
-display: flex;
-@media only screen and (max-width: 1380px) {
- display: none;
-}
+  display: flex;
+  @media only screen and (max-width: 1380px) {
+    display: none;
+  }
 `;
 
 export const MusicContainer = styled(Container)`
@@ -66,11 +66,11 @@ export const MusicContentContainer = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 100vw;
-  
 `;
 
 export const MusicContentContainer2 = styled.div`
   display: flex;
+
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -80,7 +80,7 @@ export const MusicContentContainer2 = styled.div`
     display: none;
     width: 5px;
     background-color: green;
-}
+  }
 `;
 
 export const MusicInnerContainer = styled.div`
@@ -88,9 +88,11 @@ export const MusicInnerContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-left: 800px;
+  margin-left: 650px;
+  @media only screen and (max-width: 700px) {
+    margin: 0 20px 0 109rem;
+  }
 `;
-
 
 //Music card section
 
@@ -98,7 +100,7 @@ export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 250px;
   grid-template-rows: 160px 210px;
-  
+
   grid-template-areas: "image" "text" "stats";
   border-radius: 0px 80px 0px 80px;
   background: #fff;
@@ -112,16 +114,14 @@ export const CardWrapper = styled.div`
     border-radius: 0px 20px 0px 20px;
   }
   &:hover {
-    background-color: #FEDE5B;
+    background-color: #fede5b;
     transition: 1s;
     color: yellow;
-    & CardTextWrapper{
-      background-color: #FEDE5B;
+    & CardTextWrapper {
+      background-color: #fede5b;
     }
   }
 `;
-
-
 
 export const Video = styled.video`
   width: 100%;
