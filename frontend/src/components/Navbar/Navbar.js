@@ -21,7 +21,7 @@ import { setCurrentSong, setformStatus, setSongs } from "../../state/musicSlice"
 import axios from "axios";
 import { baseURL } from "../../utils/baseURL";
 import { useLocation } from 'react-router-dom';
-import logo from '../../images/lolo.png'
+import logo from '../../images/logoFirst.png'
 
 const Navbar = () => {
 
@@ -62,8 +62,8 @@ const Navbar = () => {
         <Nav>
           <NavbarContainer>
             <NavLogo to="/">
-              <NavIcon />
-              {/* <NavIcon2 src={logo} /> */}
+              {/* <NavIcon /> */}
+              <NavIcon2 src={logo} />
               Addis Music
             </NavLogo>
             <MenuIcon onClick={handleClick}>

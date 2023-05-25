@@ -51,8 +51,8 @@ margin-right: 0.8rem;
 `;
 
 export const NavIcon2 = styled.img`
-width: 80px;
-hieght: 80px;
+width: 50px;
+hieght: 50px;
 // transparent: 3;
   margin-right: 0.8rem;
   transition: all 0.5s ease;
