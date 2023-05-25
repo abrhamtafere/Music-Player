@@ -99,7 +99,8 @@ const LibrarySongDescription = styled.div`
 
 const Img = styled.img`
 	margin: 20px 0;
-	height: 60px;
+	width: 70px;
+	height: 70px;
 	border-radius: 50%;
 `;
 

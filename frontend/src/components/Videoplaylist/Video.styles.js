@@ -66,6 +66,7 @@ export const MusicContentContainer = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 100vw;
+  
 `;
 
 export const MusicContentContainer2 = styled.div`
