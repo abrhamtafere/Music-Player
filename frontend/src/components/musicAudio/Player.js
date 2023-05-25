@@ -105,21 +105,21 @@ const Player = ({ audioRef }) => {
 					onClick={() => skipTrackHandler("skip-back")}
 					className="skip-back"
 					icon={faAngleLeft}
-					size="2x"
+					size="3x"
 					style={pointer}
 				/>
 				<FontAwesomeIcon
 					onClick={playSongHandler}
 					className="play"
 					icon={togglePlayPauseIcon()}
-					size="2x"
+					size="3x"
 					style={pointer}
 				/>
 				<FontAwesomeIcon
 					onClick={() => skipTrackHandler("skip-forward")}
 					className="skip-forward"
 					icon={faAngleRight}
-					size="2x"
+					size="3x"
 					style={pointer}
 				/>
 			</PlayControlContainer>
@@ -147,7 +147,7 @@ const TimeControlContainer = styled.div`
 const Track = styled.div`
 	background: lightblue;
 	width: 100%;
-	height: 1rem;
+	height: 1.5rem;
 	position: relative;
 	border-radius: 1rem;
 	overflow: hidden;

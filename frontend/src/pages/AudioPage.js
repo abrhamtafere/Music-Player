@@ -58,9 +58,9 @@ const AudioPage = () => {
   };
 
   return (
-    <>
-      <AudioContainer libraryStatus={libraryStatus}>
+    <AudioContainerBackg>
         <Navbar />
+      <AudioContainer libraryStatus={libraryStatus}>
         {/* <TitleContainer /> */}
 
         <Nav />
@@ -76,17 +76,11 @@ const AudioPage = () => {
           src={`http://127.0.0.1:5000/uploads/audio/` + currentSong.audio}
         />
       </AudioContainer>
-    </>
+    </AudioContainerBackg>
   );
 };
 
 const AudioContainer = styled.div`
-  background-image: url(${ImgBg});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-
   transition: all 0.5s ease;
   z-index: 2;
   margin-left: ${(p) => (p.libraryStatus ? "20rem" : "0")};
@@ -94,6 +88,16 @@ const AudioContainer = styled.div`
     margin-left: 0;
   }
 `;
+
+const AudioContainerBackg = styled.div`
+  background-image: url(${ImgBg});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  `;
+
+
 
 const TitleContainer = styled.div`
   background: linear-gradient(lightyellow, lightblue, black);
