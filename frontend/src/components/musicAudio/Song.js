@@ -40,13 +40,15 @@ const rotate = keyframes`
 `;
 
 const Img = styled.img`
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   animation: ${rotate} ${(p) => (p.isPlaying ? "10s linear infinite" : "")};
   // animation: ${rotate} 10s linear infinite;
   @media screen and (max-width: 768px) {
-    width: 50%;
+    
+		width: 250px;
+  height: 250px;
   }
 `;
 

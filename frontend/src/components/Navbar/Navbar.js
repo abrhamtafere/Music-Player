@@ -8,6 +8,7 @@ import {
   NavbarContainer,
   NavLogo,
   NavIcon,
+  NavIcon2,
   MenuIcon,
   Menu,
   MenuItem,
@@ -20,6 +21,7 @@ import { setCurrentSong, setformStatus, setSongs } from "../../state/musicSlice"
 import axios from "axios";
 import { baseURL } from "../../utils/baseURL";
 import { useLocation } from 'react-router-dom';
+import logo from '../../images/lolo.png'
 
 const Navbar = () => {
 
@@ -61,6 +63,7 @@ const Navbar = () => {
           <NavbarContainer>
             <NavLogo to="/">
               <NavIcon />
+              {/* <NavIcon2 src={logo} /> */}
               Addis Music
             </NavLogo>
             <MenuIcon onClick={handleClick}>
