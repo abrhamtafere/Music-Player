@@ -4,7 +4,9 @@
   "description": "This done for intern test",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "nodemon server.js",
+    "build": "npm i"
   },
   "author": "Abrham Tafere",
   "license": "ISC",
