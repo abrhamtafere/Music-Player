@@ -8,7 +8,7 @@ const Song = () => {
   return (
     <SongContainer>
       <Img
-        src={`http://127.0.0.1:5000/uploads/images/` + currentSong.cover}
+        src={`https://addis-suit-musics.onrender.com/uploads/images/` + currentSong.cover}
         alt={currentSong.name}
         isPlaying={isPlaying}
       />

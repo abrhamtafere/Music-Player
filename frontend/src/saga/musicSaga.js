@@ -26,7 +26,7 @@ import {
 
 function* getSongsSaga() {
   try {
-    const response = yield call(axios.get, "http://127.0.0.1:5000/api/songs");
+    const response = yield call(axios.get, "https://addis-suit-musics.onrender.com/api/songs");
     yield put(getSongsSuccess(response.data.songs));
   } catch (error) {
     yield put(getSongsFailed(error));
@@ -37,7 +37,7 @@ function* createSongSaga(action) {
   try {
     const response = yield call(
       axios.post,
-      "http://127.0.0.1:5000/api/songs",
+      "https://addis-suit-musics.onrender.com/api/songs",
       action.payload
     );
     yield put(createSongSuccess(response.data));
@@ -50,7 +50,7 @@ function* updateSongSaga(action) {
   try {
     const response = yield call(
       axios.put,
-      `http://127.0.0.1:5000/api/songs/${action.payload._id}`,
+      `https://addis-suit-musics.onrender.com/api/songs/${action.payload._id}`,
       action.payload.formData 
     );
     yield put(updateSongSuccess(response.data));
@@ -58,10 +58,10 @@ function* updateSongSaga(action) {
     yield put(updateSongFailed(error));
   }
 }
-
+// http://127.0.0.1:5000
 function* deleteSongSaga(action) {
   try {
-    yield call(axios.delete, `http://127.0.0.1:5000/api/songs/${action.payload}`);
+    yield call(axios.delete, `https://addis-suit-musics.onrender.com/api/songs/${action.payload}`);
     yield put(deleteSongSuccess(action.payload));
   } catch (error) {
     yield put(deleteSongFailed(error));

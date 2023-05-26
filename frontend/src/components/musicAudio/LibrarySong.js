@@ -57,7 +57,7 @@ const LibrarySong = ({ song, audioRef }) => {
 
 	return (
 		<LibrarySongContainer onClick={songSelectHandler} isActive={song.active}>
-			<Img src={`http://127.0.0.1:5000/uploads/images/` + song.cover} alt={song.name}></Img>
+			<Img src={`https://addis-suit-musics.onrender.com/uploads/images/` + song.cover} alt={song.name}></Img>
 			<LibrarySongDescription>
 				<H1>{song.name}</H1>
 				<H2>{song.artist}</H2>
