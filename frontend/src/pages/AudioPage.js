@@ -73,7 +73,7 @@ const AudioPage = () => {
           onTimeUpdate={updateTimeHandler}
           onEnded={songEndHandler}
           ref={audioRef}
-          src={`http://127.0.0.1:5000/uploads/audio/` + currentSong.audio}
+          src={`https://addis-suit-musics.onrender.com/uploads/audio/` + currentSong.audio}
         />
       </AudioContainer>
     </AudioContainerBackg>
