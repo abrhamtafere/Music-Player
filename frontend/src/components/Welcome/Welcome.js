@@ -24,8 +24,11 @@ const Welcome = () => {
               needs.
             </WelcomeText>
             <WelcomeText>
-            Turn up the volume, hear the beat, Our website's got what you need, Find your rhythm, dance and sway, Let our music light up your day, Join our community, let's play!
-              
+              Turn up the volume, hear the beat, Our website's got what you
+              need, Find your rhythm, dance and sway, Let our music light up
+              your day, Join our community, let's play! Overall, we believe that
+              our music playing website provides the ultimate listening
+              experience and is the best choice for anyone who loves music.
             </WelcomeText>
           </WelcomeContentText>
         </WelcomeContent>
