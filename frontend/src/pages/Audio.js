@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import styled from "styled-components";
-import axios from 'axios';
+// import styled from "styled-components";
+import styled from "@emotion/styled";
+import axios from "axios";
 
 // Import components
-import {Song, Player,  Library, Nav, Credit, Navbar} from "../components";
-import { useSelector, useDispatch } from 'react-redux';
+import { Song, Player, Library, Nav, Credit, Navbar } from "../components";
+import { useSelector, useDispatch } from "react-redux";
 import { setSongs, setSongInfo, setCurrentSong } from "../state/musicSlice";
 import { baseURL } from "../utils/baseURL";
 
@@ -13,22 +14,22 @@ const Audio = () => {
   const audioRef = useRef(null);
 
   //state from the toolkit
-  const { songs, currentSong,  isPlaying, libraryStatus, songInfo} = useSelector((state) => state.music);
-  
+  const { songs, currentSong, isPlaying, libraryStatus, songInfo } =
+    useSelector((state) => state.music);
+
   const dispatch = useDispatch();
 
-  // to assign initial value for currentSong 
-  // useEffect(() => {  
+  // to assign initial value for currentSong
+  // useEffect(() => {
   //   console.log(currentSong)
   //   dispatch(setCurrentSong(songs[0])); // default
   // }, []);
-  
 
   // Functions
   const updateTimeHandler = (e) => {
     const currentTime = e.target.currentTime;
     const duration = e.target.duration;
-    dispatch(setSongInfo({...songInfo, currentTime, duration }));
+    dispatch(setSongInfo({ ...songInfo, currentTime, duration }));
   };
 
   const songEndHandler = async () => {
@@ -57,25 +58,24 @@ const Audio = () => {
   };
 
   return (
-  <>
-    <AudioContainer libraryStatus={libraryStatus}>
-      {/* <TitleContainer /> */}
-      <Song />
-      <Player
-        audioRef={audioRef}
-      />
-      <Library
-        audioRef={audioRef}
-      />
-      <Credit />
-      <audio
-        onLoadedMetadata={updateTimeHandler}
-				onTimeUpdate={updateTimeHandler}
-				onEnded={songEndHandler}
-				ref={audioRef}
-				src={`https://addis-suit-musics.onrender.com/uploads/audio/` + currentSong.audio}
-      />
-    </AudioContainer>
+    <>
+      <AudioContainer libraryStatus={libraryStatus}>
+        {/* <TitleContainer /> */}
+        <Song />
+        <Player audioRef={audioRef} />
+        <Library audioRef={audioRef} />
+        <Credit />
+        <audio
+          onLoadedMetadata={updateTimeHandler}
+          onTimeUpdate={updateTimeHandler}
+          onEnded={songEndHandler}
+          ref={audioRef}
+          src={
+            `https://addis-suit-musics.onrender.com/uploads/audio/` +
+            currentSong.audio
+          }
+        />
+      </AudioContainer>
     </>
   );
 };

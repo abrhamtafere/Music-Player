@@ -52,7 +52,7 @@ function Audiocard({ song, audioRef }) {
   return (
     <div>
       <MusicCard onClick={songSelectHandler} isActive={song.active}>
-        <Img src={`http://127.0.0.1:5000/uploads/images/` + song.cover} alt={song.name} />
+        <Img src={`https://addis-suit-musics.onrender.com/uploads/images/` + song.cover} alt={song.name} />
         <MusicCardContent>
           <MusicCardHeading>{song.name}</MusicCardHeading>
           <MusicCardTitle>{song.artist}</MusicCardTitle>

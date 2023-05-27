@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { Hero } from "./components";
 import UpdateForm from "./components/Form/UpdateForm";
 import GlobalStyles from "./Globalstyles";
 import { Home, AudioPage, Video, NotFound } from "./pages";
