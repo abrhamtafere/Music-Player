@@ -61,8 +61,7 @@ const SongUpdateForm = ({ initialData, id }) => {
       }}
     >
       <Box sx={{ maxWidth: "400px", width: "100%", px: 3 }}>
-        <Heading sx={{ mb: 4 }}>
-          {initialData ? "Edit song" : "Add a new song"}
+        <Heading sx={{ mb: 4 }}>Edit song
         </Heading>
         <Box as="form" onSubmit={handleSubmit}>
           <Label htmlFor="artist">Artist Name</Label>
@@ -91,7 +90,7 @@ const SongUpdateForm = ({ initialData, id }) => {
             sx={{ width: "100%", background: "blue" }}
             onClick={() => dispatch(setformStatus2(!formStatus2))}
           >
-            {initialData ? "Save changes" : "Add song"}
+            Save changes
           </Button>
           <Link href="/">
 
