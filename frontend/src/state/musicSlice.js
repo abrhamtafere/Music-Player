@@ -13,6 +13,7 @@ export const musicSlice = createSlice({
     formStatus2: false,
     updateStatus: false,
     isLoading: false,
+    error: null,
   },
   reducers: {
     getSongs: (state) => {
@@ -20,7 +21,6 @@ export const musicSlice = createSlice({
     },
     getSongsSuccess: (state, action) => {
       state.songs = action.payload;
-      state.currentSong = state.songs[0];
       state.currentSong = state.songs[0];
       state.isLoading = false;
     },
@@ -32,36 +32,36 @@ export const musicSlice = createSlice({
       state.loading = true;
     },
     createSongSuccess: (state, action) => {
-      state.loading = false;
       state.songs.push(action.payload);
+      state.loading = false;
     },
     createSongFailed: (state, action) => {
-      state.loading = false;
       state.error = action.payload;
+      state.loading = false;
     },
     updateSong: (state) => {
       state.loading = true;
     },
     updateSongSuccess: (state, action) => {
-      state.loading = false;
       state.songs = state.songs.map((song) =>
-        song._id === action.payload._id ? action.payload : song
+      song._id === action.payload._id ? action.payload : song
       );
+      state.loading = false;
     },
     updateSongFailed: (state, action) => {
-      state.loading = false;
       state.error = action.payload;
+      state.loading = false;
     },
     deleteSong: (state) => { 
       state.loading = true;
     },
     deleteSongSuccess: (state, action) => {
-      state.loading = false;
       state.songs = state.songs.filter((song) => song._id !== action.payload);
+      state.loading = false;
     },
     deleteSongFailed: (state, action) => {
-      state.loading = false;
       state.error = action.payload;
+      state.loading = false;
     },
 
     setLibraryStatus: (state, action) => {
@@ -93,8 +93,6 @@ export const musicSlice = createSlice({
 
 // case under reducers becomes an action
 export const {
-  increase,
-  decrease,
   setLibraryStatus,
   setIsPlaying,
   setSongInfo,

@@ -11,7 +11,7 @@ function Video() {
       <MusicWrapper>
         <MusicTitle>Video Playlists</MusicTitle>
         <MusicContainer>
-        <Videocard title={"Sample Video"} date={1} imgUrl={img1} />
+        <Videocard title={"Sample Video"} date={1} />
         <Videocard title={"Name name"} date={1} imgUrl={img1} />
         <Videocard title={"Oblag Chamo"} date={1} imgUrl={img1} />
         <Videocard title={"Bean Back"} date={1} imgUrl={img1} />

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ImgBg from "../../images/music1.jpg";
 
 export const HeroContainer = styled.div`
-
   background-image: linear-gradient(
       to top right,
       rgba(11, 10, 10, 0.38),
@@ -80,10 +79,4 @@ export const HeroText = styled.h3`
   @media only screen and (max-width: 375px) {
     padding: 1.5rem 0;
   }
-`;
-
-export const HeroBtn = styled(Link)`
-  text-decoration: none;
-  outline: none;
-  border: none;
 `;

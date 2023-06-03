@@ -64,13 +64,10 @@ function Audiocard({ song, audioRef }) {
               </MusicCardItem>
             </MusicCardItems>
             <MusicCardItems>
-              {/* <MusicCardTitle>Edit delete</MusicCardTitle> */}
             </MusicCardItems>
           </MusicCardDetails>
         </MusicCardContent>
       </MusicCard>
-      
-      {/* // */}
     </div>
   );
 }

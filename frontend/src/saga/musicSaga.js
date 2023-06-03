@@ -71,12 +71,13 @@ function* deleteSongSaga(action) {
 // function* songSaga() {
 //   yield takeEvery("music/getSongs", workGetSongs);
 // }
+//we can use getSongs.type or "music/getSongs" or getSongs
 
 function* songSaga() {
-  yield takeLatest(getSongs.type, getSongsSaga);
-  yield takeLatest(createSong.type, createSongSaga);
-  yield takeLatest(updateSong.type, updateSongSaga);
-  yield takeLatest(deleteSong.type, deleteSongSaga);
+  yield takeLatest(getSongs, getSongsSaga);
+  yield takeLatest(createSong, createSongSaga);
+  yield takeLatest(updateSong, updateSongSaga);
+  yield takeLatest(deleteSong, deleteSongSaga);
 }
 
 export default songSaga;

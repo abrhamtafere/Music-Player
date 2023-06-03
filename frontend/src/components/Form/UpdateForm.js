@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import SongUpdateForm from "./SongUpdateForm";
 import { useParams } from "react-router-dom";
@@ -8,8 +8,7 @@ import axios from "axios";
 function UpdateForm() {
   const [initialData, setInitialData] = useState();
   const { id } = useParams();
-  const { formStatus2, songs } = useSelector((state) => state.music);
-  // const dispatch = useDispatch();
+  const { formStatus2 } = useSelector((state) => state.music);
 
   useEffect(() => {
     axios
@@ -28,7 +27,6 @@ function UpdateForm() {
       </SubContainer>
       <FormDetails>
         <SongUpdateForm initialData={initialData} id={id} />
-        {/* <RegistrationForm /> */}
       </FormDetails>
     </FormContainer>
   );

@@ -1,5 +1,5 @@
 //In the Navbar.js file
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BiMenu, BiX } from "react-icons/bi";
 import { IconContext } from "react-icons/lib";
 import { Button } from "../../Globalstyles";
@@ -8,7 +8,6 @@ import {
   NavbarContainer,
   NavLogo,
   NavIcon,
-  NavIcon2,
   MenuIcon,
   Menu,
   MenuItem,
@@ -17,14 +16,12 @@ import {
   MenuLinkBtn,
 } from "./Navbar.styles";
 import { useDispatch, useSelector } from "react-redux";
-import { setCurrentSong, setformStatus, setSongs } from "../../state/musicSlice";
-import axios from "axios";
-import { baseURL } from "../../utils/baseURL";
-import { useLocation } from 'react-router-dom';
-import logo from '../../images/logoFirst.png'
+import { setformStatus } from "../../state/musicSlice";
+// import { baseURL } from "../../utils/baseURL";
+import { useLocation } from "react-router-dom";
+import logo from "../../images/logoFirst.png";
 
 const Navbar = () => {
-
   // to get the current nav link
   const location = useLocation();
   //click is the initial state and setclick will be the update state
@@ -38,32 +35,16 @@ const Navbar = () => {
   // const closeMenu = () => {};
   const handleButton = () => buttonClick(!button);
 
-  const { formStatus, songs, currentSong, updateStatus } = useSelector((state) => state.music);
+  const { formStatus } = useSelector((state) => state.music);
   const dispatch = useDispatch();
-
-  //from server
-  // useEffect(() => {
-  //  axios
-  //     .get(`http://127.0.0.1:5000/api/songs`)
-  //     .then((res) => {
-  //       dispatch(setSongs(res.data.songs))
-  //       dispatch(setCurrentSong(songs[0]))
-  //       currentSong.active = true;
-  //     })
-  //     .catch((err) => console.log(err));
-  //   }, [updateStatus]);
-  //   console.log(songs);
 
   return (
     <div>
       <IconContext.Provider value={{ color: "#fff" }}>
-        {" "}
-        {/* //turns the menu icon to white */}
         <Nav>
           <NavbarContainer>
             <NavLogo to="/">
-              {/* <NavIcon /> */}
-              <NavIcon2 src={logo} />
+              <NavIcon src={logo} />
               Addis Music
             </NavLogo>
             <MenuIcon onClick={handleClick}>
@@ -72,39 +53,56 @@ const Navbar = () => {
 
             <Menu onClick={handleClick} click={click}>
               <MenuItem>
-                <MenuLink  className={location.pathname === '/' ? 'activex' : ''} to="/">Home</MenuLink>
+                <MenuLink
+                  className={location.pathname === "/" ? "activex" : ""}
+                  to="/"
+                >
+                  Home
+                </MenuLink>
               </MenuItem>
               <MenuItem>
                 <a href="#playlist"></a>
-                <MenuLink  className={location.pathname === '/audio' ? 'activex' : ''} to="/audio">Audio Musics</MenuLink>
+                <MenuLink
+                  className={location.pathname === "/audio" ? "activex" : ""}
+                  to="/audio"
+                >
+                  Audio Musics
+                </MenuLink>
               </MenuItem>
               <MenuItem>
-                <MenuLink className={location.pathname === '/video' ? 'activex' : ''} to="/video">Video Musics</MenuLink>
+                <MenuLink
+                  className={location.pathname === "/video" ? "activex" : ""}
+                  to="/video"
+                >
+                  Video Musics
+                </MenuLink>
               </MenuItem>
-              {location.pathname === '/' ?
-              <MenuItemBtn onClick={handleButton}>
-                {button ? ( // here i will handle all or remove all styles
-                  <MenuLinkBtn to="#">
-                    <Button
-                      primary
-                      onClick={() => dispatch(setformStatus(!formStatus))}
-                    >
-                      Add Musics
-                    </Button>
-                  </MenuLinkBtn>
-                ) : (
-                  <MenuLinkBtn to="#">
-                    <Button
-                      primary
-                      bigFont
-                      onClick={() => dispatch(setformStatus(!formStatus))}
-                    >
-                      Add Musics
-                    </Button>
-                  </MenuLinkBtn>
-                )}
-              </MenuItemBtn>
-              : ''}
+              {location.pathname === "/" ? (
+                <MenuItemBtn onClick={handleButton}>
+                  {button ? ( // here i will handle all or remove all styles
+                    <MenuLinkBtn to="#">
+                      <Button
+                        primary
+                        onClick={() => dispatch(setformStatus(!formStatus))}
+                      >
+                        Add Musics
+                      </Button>
+                    </MenuLinkBtn>
+                  ) : (
+                    <MenuLinkBtn to="#">
+                      <Button
+                        primary
+                        bigFont
+                        onClick={() => dispatch(setformStatus(!formStatus))}
+                      >
+                        Add Musics
+                      </Button>
+                    </MenuLinkBtn>
+                  )}
+                </MenuItemBtn>
+              ) : (
+                ""
+              )}
             </Menu>
           </NavbarContainer>
         </Nav>

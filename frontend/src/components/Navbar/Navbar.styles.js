@@ -41,16 +41,7 @@ export const NavLogo = styled(Link)`
   }
 `;
 
-export const NavIcon = styled(BiMusic)`  
-margin-right: 0.8rem;
-  transition: all 0.5s ease;
-  
-  &:hover {
-    transform: scale(2);
-  }
-`;
-
-export const NavIcon2 = styled.img`
+export const NavIcon = styled.img`
 width: 50px;
 hieght: 50px;
 // transparent: 3;

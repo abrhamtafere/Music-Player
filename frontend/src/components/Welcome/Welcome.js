@@ -14,7 +14,7 @@ const Welcome = () => {
       <WelcomeContainer>
         <WelcomeContent>
           <WelcomeImg>
-            <Img src={MusicImg} alt=" Delious Pizza" />
+            <Img src={MusicImg} alt="music image" />
           </WelcomeImg>
           <WelcomeContentText>
             <WelcomeContentTitle>Welcome</WelcomeContentTitle>

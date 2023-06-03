@@ -8,7 +8,10 @@ const Song = () => {
   return (
     <SongContainer>
       <Img
-        src={`https://addis-suit-musics.onrender.com/uploads/images/` + currentSong.cover}
+        src={
+          `https://addis-suit-musics.onrender.com/uploads/images/` +
+          currentSong.cover
+        }
         alt={currentSong.name}
         isPlaying={isPlaying}
       />
@@ -46,9 +49,8 @@ const Img = styled.img`
   animation: ${rotate} ${(p) => (p.isPlaying ? "10s linear infinite" : "")};
   // animation: ${rotate} 10s linear infinite;
   @media screen and (max-width: 768px) {
-    
-		width: 250px;
-  height: 250px;
+    width: 250px;
+    height: 250px;
   }
 `;
 
@@ -61,15 +63,3 @@ const H2 = styled.h3`
 `;
 
 export default Song;
-
-// Here we create a component that will rotate everything we pass in over two seconds
-// const Rotate = styled.div`
-//   display: inline-block;
-//   animation: ${rotate} 2s linear infinite;
-//   padding: 2rem 1rem;
-//   font-size: 1.2rem;
-// `;
-
-// render(
-//   <Rotate>&lt; 💅🏾 &gt;</Rotate>
-// );

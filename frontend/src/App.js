@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     dispatch(getSongs());
   }, [dispatch]);
-  console.log('from app');
+  // console.log('from app');
   console.log(songs);
 
   return (

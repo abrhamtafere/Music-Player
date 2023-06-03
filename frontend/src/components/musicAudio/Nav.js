@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { RiPlayListFill } from "react-icons/ri";
-// import { faMusic } from "@fortawesome/free-solid-svg-icons";
 
 import { useSelector, useDispatch } from "react-redux";
 import { setLibraryStatus } from "../../state/musicSlice";
@@ -54,7 +52,8 @@ const Button = styled.button`
   border: 2px solid rgb(65, 65, 65);
   padding: 0.5rem;
   transition: all 0.3s ease;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   &:hover {
     background: rgb(65, 65, 65);
     color: white;

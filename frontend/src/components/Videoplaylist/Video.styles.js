@@ -11,38 +11,6 @@ export const MusicWrapper = styled.section`
   //scroll
 `;
 
-export const Small = styled.small`
-  color: grey;
-`;
-export const Mobile = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 20px;
-  margin: ;
-  @media only screen and (min-width: 700px) {
-    display: none;
-  }
-`;
-
-export const Middle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 20px;
-  margin: ;
-  @media only screen and (min-width: 700px && max-width: 1380px) {
-    display: none;
-  }
-`;
-
-export const Pc = styled.div`
-  display: flex;
-  @media only screen and (max-width: 1380px) {
-    display: none;
-  }
-`;
-
 export const MusicContainer = styled(Container)`
   display: flex;
   flex-direction: column;
@@ -58,14 +26,6 @@ export const MusicTitle = styled.h2`
   @media only screen and (max-width: 700px) {
     margin-bottom: 0;
   }
-`;
-
-export const MusicContentContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  max-width: 100vw;
 `;
 
 export const MusicContentContainer2 = styled.div`
@@ -167,30 +127,4 @@ export const CardTextBody = styled.p`
   color: grey;
   font-size: 15px;
   font-weight: 300;
-`;
-
-export const CardStatWrapper = styled.div`
-  grid-area: stats;
-  display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-
-  // border-bottom-left-radius: 15px;
-  // border-bottom-right-radius: 15px;
-  background: #5930e5;
-`;
-
-export const CardStats = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  padding: 10px;
-`;
-
-export const LinkText = styled.a`
-  color: #fff;
-  text-decoration: none;
 `;

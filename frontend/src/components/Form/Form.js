@@ -2,9 +2,6 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { setformStatus } from "../../state/musicSlice";
-import { Label, Input } from '@rebass/forms';
-import { Box } from "rebass";
-// import RegistrationForm from "./RegistrationForm";
 import SongForm from "./SongForm";
 
 function Form() {
@@ -19,9 +16,7 @@ function Form() {
         </Button>
       </SubContainer>
       <FormDetails>
-        
         <SongForm />
-        {/* <RegistrationForm /> */}
       </FormDetails>
     </FormContainer>
   );
@@ -72,7 +67,7 @@ const SubContainer = styled.div`
 `;
 
 const FormDetails = styled.div`
- border-top: solid pink;
+  border-top: solid pink;
   padding: 0 2rem;
   width: 100%;
   display: flex;

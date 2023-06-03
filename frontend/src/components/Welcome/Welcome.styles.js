@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import MusicBg from "../../images/music2.jpg";
 
 export const WelcomeContainer = styled.section`
   display: flex;
