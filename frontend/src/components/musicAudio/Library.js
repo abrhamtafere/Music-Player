@@ -14,7 +14,7 @@ const Library = ({ audioRef }) => {
   return (
     <LibraryContainer libraryStatus={libraryStatus}>
       <SubContainer>
-        <H1>Library</H1>
+        <H1>Playlists ({songs.length})</H1>
         <Button onClick={() => dispatch(setLibraryStatus(!libraryStatus))}>
           <RiPlayListFill />
         </Button>

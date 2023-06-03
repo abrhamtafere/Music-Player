@@ -60,7 +60,6 @@ function Audiocard({ song, audioRef }) {
             <MusicCardItems>
               <MusicCardTitle>enjoy with us music band </MusicCardTitle>
               <MusicCardItem>
-                <MusicCardIcon />
               </MusicCardItem>
             </MusicCardItems>
             <MusicCardItems>

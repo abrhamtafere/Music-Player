@@ -17,9 +17,9 @@ const Audio = ({ song, audioRef }) => {
     <div>
       <MusicWrapper>
         <MusicContainer>
-          <MusicTitle>Playlists</MusicTitle>
+          <MusicTitle>Playlists </MusicTitle>
           <MusicContentContainer>
-            <Small>see more by scrolling horizontally</Small>
+            <Small>see more by scrolling horizontally ({songs.length} song playlists)</Small>
             <MusicCardWrapper>
               <MusicCardSection>
                 <MusicSmallCards>
