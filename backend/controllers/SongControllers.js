@@ -3,7 +3,7 @@ const SongModel = require("../models/SongModel");
 // Get all songs
 module.exports.getSongs = async (req, res) => {
   try {
-    const songs = await SongModel.find();
+    const songs = await SongModel.find().sort({ createdAt: -1 });
 
     res.json({
       status: 'sucess',

@@ -35,6 +35,14 @@ const songSchema = new mongoose.Schema({
     default: false,
     // default: './images/cover.jpg',
   },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 // Create a Song model
